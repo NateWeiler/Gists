@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myDiv {
+  border: 1px solid red;
+  outline-style: dotted;
+}
+</style>
+</head>
+<body>
+
+<div id="myDiv" style="outline-color:blue;">This is a div element.</div>
+<br>
+<button type="button" onclick="myFunction()">Return outline color</button>
+
+<script>
+function myFunction() {
+  alert(document.getElementById("myDiv").style.outlineColor);
+}
+</script>
+
+</body>
+</html>

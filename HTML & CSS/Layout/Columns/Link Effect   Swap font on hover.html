@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Link Effect - Swap font on hover</title>
+<style type="text/css">
+    :root {
+  --mainColor: #ff9800;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  height: 100vh;
+  justify-content: center;
+}
+
+a {
+  background:
+     linear-gradient(
+       to bottom, var(--mainColor) 0%,
+       var(--mainColor) 100%
+     );
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 4px 4px;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  background: none;
+  color: red;
+  font-family: 'Creepster', serif;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+  line-height: .75em;
+}
+</style>
+</head>
+<body>
+    <p>Flapjacks on a <a href="#">sunny warm</a> afternoon.</p>
+</body>
+</html>

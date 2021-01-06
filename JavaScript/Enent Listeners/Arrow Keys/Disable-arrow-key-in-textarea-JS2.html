@@ -1,0 +1,54 @@
+<!--
+Example that also maintains an array of which keys are pressed
+and when keyup event happens it removes them from array.
+
+Add a event listener onkeydown on the window.
+
+If the event happens then check if the keys are arrow or not.
+
+If arrow key is pressed then prevent its default behaviour.
+-->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>How to disable arrow key in textarea using JavaScript?</title> 
+    <style> 
+        #t {
+            height: 100px; 
+            width: 300px; 
+            background: green; 
+            color: white; 
+        } 
+    </style>
+</head>
+<body style = "text-align:center;">  
+    <h1 style = "color:green;">How to disable arrow key in textarea using JavaScript?</h1> 
+    <p id = "GFG_UP" style = "font-size: 15px; font-weight: bold;"></p> 
+    <textarea id = "t">JavaScript was once upon a time used only in client side(browser), but node js (execution engine/run time/web  server) have made possible to run javascript on server side. JavaScript has stormed the web technology and nowadays small software ventures to fortune 500, all are using node js for web apps.</textarea>
+    <br>
+    <button onclick = "gfg_Run()">click here</button> 
+    <p id = "GFG_DOWN" style = "color:green;font-size: 20px; font-weight: bold;"></p> 
+    <script> 
+        let el_up = document.getElementById("GFG_UP");
+        let el_down = document.getElementById("GFG_DOWN");
+        el_up.innerHTML = "Click on the button to disable"
+                + " scrolling through arrow keys.";
+        function gfg_Run() { 
+            let key = {}; 
+            window.addEventListener("keydown", function(e) { 
+                key[e.keyCode] = true; 
+                switch(e.keyCode){ 
+                    case 37: case 39: case 38: case 40: 
+                    case 32: e.preventDefault(); break;  
+                    default: break; 
+                } 
+            }, false); 
+            window.addEventListener('keyup', function(e){ 
+                key[e.keyCode] = false; 
+            }, false); 
+            el_down.innerHTML =  "Scrolling from arrow keys is disabled."; 
+        }
+    </script>  
+</body>
+</html>

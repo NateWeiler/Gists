@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Fake div Buttons styles.css">
+    <title>Fake div Buttons</title>
+  </head>
+  <body>
+    <h2>Fake buttons</h2>
+    <div data-message="This is from the first button" tabindex="0">Click me!</div>
+    <div data-message="This is from the second button" tabindex="0">Click me too!</div>
+    <div data-message="This is from the third button" tabindex="0">And me!</div>
+    <script>
+      const buttons = document.querySelectorAll('div');
+
+      for(let i = 0; i < buttons.length; i++) {
+        addHandler(buttons[i]);
+      }
+
+      function addHandler(button) {
+        button.onclick = function(e) {
+          let message = e.target.getAttribute('data-message');
+          alert(message);
+        }
+      }
+
+      document.onkeydown = function(e) {
+        if(e.keyCode === 13) { // The Enter/Return key
+          document.activeElement.onclick(e);
+        }
+      };
+    </script>
+  </body>
+</html>

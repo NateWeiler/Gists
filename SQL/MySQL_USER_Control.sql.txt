@@ -1,0 +1,18 @@
+-- Add User
+create user `{USER_NAME}`@`{HOST:localhost, xxx.xxx.xxx.xxx}` identified by '{PASSWORD}';
+
+-- Grant Permission
+grant all privileges on {DATABASE_NAME}.{TABLE_NAME: *, some_table} to `{USER_NAME}`@`{HOST}`;
+
+-- Change Password
+-- older 5.7.5 versions
+set password for `{USER_NAME}`@`{HOST}` = PASSWORD('{NEW_PASSWORD}');
+
+-- newer 5.7.6 versions
+alter user `{USER_NAME}`@`{HOST}` identified by '{NEW_PASSWORD}';
+
+-- Remove User
+drop user `{USER_NAME}`@`{HOST}`;
+
+-- FLUSH
+flush privileges;

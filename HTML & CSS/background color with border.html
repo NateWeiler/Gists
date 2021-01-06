@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+<style id="background-color-with-border.css">
+nav {
+    margin:0px auto;
+    width:100%;
+    height:50px;
+    background-color:white;
+    float:left;
+    padding:10px;
+    border:2px solid red;
+    position: relative;
+    z-index: 10;
+}
+nav:after {
+    background-color: grey;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: -1;
+}
+</style>
+</head>
+<body>
+  <nav>Some text or anything</nav>
+
+<script id="jsbin-source-html" type="text/html"><!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+</head>
+<body>
+  <nav>Some text or anything</nav>
+</body>
+</html>
+</script>
+
+<script id="jsbin-source-css" type="text/css">nav {
+    margin:0px auto;
+    width:100%;
+    height:50px;
+    background-color:white;
+    float:left;
+    padding:10px;
+    border:2px solid red;
+    position: relative;
+    z-index: 10;
+}
+nav:after {
+    background-color: grey;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: -1;
+}</script>
+</body>
+</html>

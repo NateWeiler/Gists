@@ -1,0 +1,9 @@
+# Prompt a user for confirmation in bash script Explanation:
+
+# The read command outputs the prompt (-p "prompt") then accepts one character (-n 1) and accepts backslashes literally (-r) (otherwise read would see the backslash as an escape and wait for a second character). The default variable for read to store the result in is $REPLY if you don't supply a name like this: read -p "my prompt" -n 1 -r my_var
+
+# The if statement uses a regular expression to check if the character in $REPLY matches (=~) an upper or lower case "Y". The regular expression used here says "a string starting (^) and consisting solely of one of a list of characters in a bracket expression ([Yy]) and ending ($)". The anchors (^ and $) prevent matching longer strings. In this case they help reinforce the one-character limit set in the read command.
+
+# The negated form uses the logical "not" operator (!) to match (=~) any character that is not "Y" or "y". An alternative way to express this is less readable and doesn't as clearly express the intent in my opinion in this instance.
+
+# However, this is what it would look like: if [[ $REPLY =~ ^[^Yy]$ ]]

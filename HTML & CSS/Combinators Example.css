@@ -1,0 +1,15 @@
+section p {
+color: blue;
+}
+
+section > p {
+background-color: yellow;
+}
+
+h2 + p {
+text-transform: uppercase;
+}
+
+h2 ~ p {
+border: 1px dashed black;
+}

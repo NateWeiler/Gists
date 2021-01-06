@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Link Effect - Raised text on hovert</title>
+<style type="text/css">
+    :root {
+  --mainColor: #ff9800;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  height: 100vh;
+  justify-content: center;
+}
+
+a {
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 4px 4px;
+  color: var(--mainColor);
+  text-decoration: none;
+}
+
+a:hover {
+  /*background-image:
+     linear-gradient(
+       to bottom, var(--mainColor) 0%,
+       var(--mainColor) 100%
+     );*/
+  text-shadow: 0px 0px 0 rgb(208,138,28),1px 1px 0 rgb(165,123,26),2px 2px 0 rgb(242,185,100),3px 3px 0 rgb(227,167,187),4px 4px 0 rgb(182,129,63),5px 5px 0 rgb(161,117,50),6px 6px 0 rgb(144,103,39),7px 7px 0 rgb(130,91,31),8px 8px 0 
+rgb(120,83,25),9px 9px 0 rgb(108,73,20),10px 10px 0 rgb(93,63,13),11px 11px 0 rgb(60,54,12),12px 12px 0
+rgb(63,41,8),13px 13px 0
+}
+
+/*a:hover::before {
+  content: 'sunny warm';
+  color: transparent;
+  -webkit-text-stroke: 1px var(--mainColor);
+  background: none;
+  position: absolute;
+  left: 52.6%;
+  top: 50.8%;
+  transform: translate(-50%, -50%);
+}*/
+</style>
+</head>
+<body>
+  <p>Weather is <a href="#">sunny and warm</a> today.</p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- Example that detects the arrow key by onkeydown Event by using event.keyCode. -->
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>JavaScript | Detecting arrow key presses.</title> 
+</head> 
+<body style="text-align:center;" id="body"> 
+    <h1 style="color:green;">JavaScript | Detecting arrow key presses.</h1>
+    <p id="GFG_UP" style="font-size: 16px;"> Press an arrow key and click the last time.</p> 
+    <button onclick="gfg_Run()">Detect Arrow key</button> 
+    <p id="GFG_DOWN" style="color:green;  font-size: 20px; font-weight: bold;"></p> 
+    <script> 
+        let el_up = document.getElementById("GFG_UP");
+        let el_down = document.getElementById("GFG_DOWN");
+        let str = 'No key pressed';
+        function gfg_Run() {
+            el_down.innerHTML = str;
+        }
+        document.onkeydown = function(e) {
+            switch (e.keyCode) {
+                case 37: str = 'Left Key pressed!';
+                    break; 
+                case 38: str = 'Up Key pressed!'; 
+                    break;
+                case 39: str = 'Right Key pressed!';
+                    break;
+                case 40: str = 'Down Key pressed!';
+                    break;
+            }
+        };
+    </script>
+</body>
+</html>

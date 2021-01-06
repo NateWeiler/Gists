@@ -1,0 +1,40 @@
+<!--
+How to disable arrow key in textarea using JavaScript.
+Given an HTML element containing the <textarea> element
+and the task is to disable scrolling through arrow
+keys with the help of JavaScript.
+Approach 1
+-->
+<!DOCTYPE HTML>  
+<html>  
+<head>  
+    <title>How to disable arrow key in textarea using JavaScript</title>
+    <style>
+        #t {
+            height: 100px;
+            width: 300px;
+            background: green;
+            color: white;
+        }
+    </style>
+</head>
+<body style = "text-align:center;">
+    <h1 style = "color:green;">Disable Arrow Key in Textarea JS1</h1>
+    <p id = "GFG_UP" style = "font-size: 15px; font-weight: bold;"></p><textarea id = "t">JavaScript was once upon a time used only in client side(browser), but node js (execution engine/run time/web server) have made possible to run javascript on server side. JavaScript has stormed the web technology and nowadays small software ventures to fortune 500, all are using node js for web apps.</textarea><br>
+    <button onclick = "gfg_Run()">click here</button>
+    <p id = "GFG_DOWN" style = "color:green; font-size: 20px; font-weight: bold;"></p>
+    <script>
+        let el_up = document.getElementById("GFG_UP");
+        let el_down = document.getElementById("GFG_DOWN");
+        el_up.innerHTML = "Click on the button to disable" + " scrolling through arrow keys.";
+        function gfg_Run() {
+            window.addEventListener("keydown", function(e) {
+                if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1){
+                    e.preventDefault();
+                }
+            }, false);
+            el_down.innerHTML = "Scrolling from arrow keys is disabled.";
+        }
+    </script>
+</body>
+</html>

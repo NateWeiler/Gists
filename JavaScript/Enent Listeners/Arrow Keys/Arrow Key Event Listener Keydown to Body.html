@@ -1,0 +1,35 @@
+<!-- Example detects the arrow key by adding a eventListener(keydown) to the body by using event.key. -->
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>JavaScript | Detecting arrow key presses</title>
+</head>
+  <body style="text-align:center;" id="body">
+    <h1 style="color:green;">JavaScript | Detecting arrow key presses</h1>
+    <p id="GFG_UP" style="font-size: 16px;">Press an arrow key and click the button to know which key was pressed last time.</p>
+    <button onclick="gfg_Run()">Detect Arrow key</button>
+    <p id="GFG_DOWN" style="color:green; font-size: 20px; font-weight: bold;"></p>
+    <script>
+        let el_up = document.getElementById("GFG_UP");
+        let el_down = document.getElementById("GFG_DOWN");
+        let str = 'No key pressed';
+        function gfg_Run() {
+            el_down.innerHTML = str;
+        }
+        document.body.addEventListener('keydown', function(event)
+                                       {
+            const key = event.key;
+            switch (key) {
+                case "ArrowLeft": str = 'Left';
+                    break;
+                case "ArrowRight": str = 'Right';
+                    break;
+                case "ArrowUp": str = 'Up';
+                    break;
+                case "ArrowDown": str = 'Down';
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
