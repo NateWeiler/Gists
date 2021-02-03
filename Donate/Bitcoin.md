@@ -29,11 +29,11 @@ So here's how you do it:
 
     <h1>My Awesome Web Page</h1>
 
-    <p>Some stuff on your page and <a href="bitcoin:A_BITCOIN_ADDRESS">a donation link</a></p>
+    <p>Some stuff on your page and <a href="1N4qcqVb6Smak6SpSP5nH62zRdkEM8JtUu">a donation link</a></p>
     <p>Some more stuff on your page</p>
     <p>
       Even more stuff on your page and
-      <a href="bitcoin:ANOTHER_BITCOIN_ADDRESS?amount=0.01">
+      <a href="bitcoin:1N4qcqVb6Smak6SpSP5nH62zRdkEM8JtUu?amount=0.01">
         another donation link, this time with a suggested amount
       </a>.
     </p>
@@ -54,7 +54,7 @@ QR code.  Just point your phone, and tap "send" in whatever app you're using.
 Want the popup effect on an image?  It's just like any other `<a>` tag:
 
 ```html
-<a href="bitcoin:A_BITCOIN_ADDRESS"><img src="/path/to/image.png" /></a>
+<a href="bitcoin:1N4qcqVb6Smak6SpSP5nH62zRdkEM8JtUu"><img src="/path/to/image.png" /></a>
 ```
 
 ---
@@ -67,8 +67,8 @@ web page rather than attempting to handle a `bitcoin:` link, you can just use
 
 ```html
 <a
-  href="https://blockchain.info/address/A_BITCOIN_ADDRESS"
-  data-btcaddress="A_BITCOIN_ADDRESS"
+  href="https://blockchain.info/address/1N4qcqVb6Smak6SpSP5nH62zRdkEM8JtUu"
+  data-btcaddress="1N4qcqVb6Smak6SpSP5nH62zRdkEM8JtUu"
 >
   Some text
 </a>

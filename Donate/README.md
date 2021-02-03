@@ -21,14 +21,18 @@
 
 ---
 
-# Like to help me with a Donation
+# Like to help me with a Donation ![](img/$.png)
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/paypalme/NateWeiler)
+[![Donate](Donate-PayPal-green.svg)](https://www.paypal.com/paypalme/NateWeiler)
 
 [![PayPal](PayPal_Donate.png)](https://www.paypal.com/paypalme/NateWeiler)
 
-Scan QVC or Copy address to Donate in **Bitcoin** to
+## Scan QVC to Donate in ![Bitcoin](img/Bitcoin%20Orange%20Gold.png)
 
-![Donate in Bitcoin to](Donate-To.png)
+![Donate in Bitcoin to](img/Donate-To.png)
 
-```1N4qcqVb6Smak6SpSP5nH62zRdkEM8JtUu```
+## Copy address to Donate in ![Bitcoin](img/Bitcoin%20Orange%20Gold.png)
+
+## ```1N4qcqVb6Smak6SpSP5nH62zRdkEM8JtUu```
+
+---
