@@ -23,7 +23,7 @@ echo $page
 
 until (( $page -lt $max ))
 do
-    curl "https://gitlab.com/api/v4/$cntx/$name/projects?page=1&per_page=1000" | jq '.[]' | jq .'ssh_url_to_repo' | xargs -L1 git clone
+    curl "https://gitlab.com/api/v4/$cntx/$name/projects?page=1&per_page=1000" | jq -r '.[].html_url' | xargs -L1 git clone
     $page=$page+1
 done
 

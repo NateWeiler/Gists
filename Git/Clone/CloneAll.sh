@@ -3,9 +3,7 @@ set -euo pipefail
 #GITHUB_API_TOKEN=$(mimipass get github-api-token)
 CODE_DIR=$HOME/Desktop/REPOS
 
-echo What is the 'GitHub_User '
-#GitHub_User=$GitHub_User
-
+GitHub_User=$GitHub_User
 repos_url="https://api.github.com/users/$GitHub_User/repos"
 #auth_header="Authorization: token $GITHUB_API_TOKEN"
 POOL_SIZE=10
