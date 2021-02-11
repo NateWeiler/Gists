@@ -1,10 +1,8 @@
-#!/bin/bash
-
-echo "Prompt a user for confirmation in bash script"
-
-read -p "Continue (y/n)?" choice
-case "$choice" in
-  y|Y ) echo "yes";;
-  n|N ) echo "no";;
-  * ) echo "invalid";;
-esac
+while true; do
+    read -p "Are you sure?" yn
+    case $yn in
+        [Yy]* ) your-action-here; break;;
+        [Nn]* ) exit;;
+        * ) echo -e "\nPlease answer yes or no.";;
+    esac
+done

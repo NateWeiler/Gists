@@ -1,6 +1,6 @@
 ﻿#!/bin/bash
 
-echo "Prompt for Yes/No input using read command & serve multiple languages"
+echo -e "\nPrompt for Yes/No input using read command & serve multiple languages"
 
 set -- $(locale LC_MESSAGES)
 yesptrn="$1"; noptrn="$2"; yesword="$3"; noword="$4"
@@ -10,6 +10,6 @@ while true; do
     case $yn in
         ${yesptrn##^} ) make install; break;;
         ${noptrn##^} ) exit;;
-        * ) echo "Answer ${yesword} / ${noword}.";;
+        * ) echo -e "\nAnswer ${yesword} / ${noword}.";;
     esac
 done

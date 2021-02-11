@@ -6,182 +6,205 @@ python3 -m venv venv
 . venv/bin/activate
 python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
-python3 -m pip install --upgrade --force-reinstall -r requirements.txt
+python -m pip install --upgrade -r requirements.txt
 python3 -m pip freeze > requirements.txt
 
-$ deactivate
+python3 -m pip install --upgrade --force-reinstall -r requirements.txt
+python3 -m pip freeze > requirements.txt
+deactivate
 
 	<<---| Git Bash Venv |--->>
 python -m venv venv
-source venv/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-python -m pip install --upgrade --force-reinstall -r requirements.txt
-python -m pip freeze > requirements.txt
+source venv/Scripts/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+pip install --upgrade -r requirements.txt
+pip freeze > requirements.txt
 
-$ deactivate
+pip install --upgrade --force-reinstall -r requirements.txt
+pip freeze > requirements.txt
+deactivate
 
 	##############
 	# Flask Venv #
 	##############
 	<<---| Mac Flask Venv |--->>
-
 python3 -m venv venv
 source venv/bin/activate
 python3 -m pip install --upgrade pip
-python3 -m pip install -r requirements.txt
-python3 -m pip install --upgrade --force-reinstall -r requirements.txt
-cat requirements.txt
-python3 -m pip freeze --local | grep -v ‘^\-e’ | cut -d = -f 1 | xargs -n1 pip install -U
 python3 -m pip freeze > requirements.txt
+python3 -m pip install --upgrade -r requirements.txt
 export FLASK_APP=<?????>
 export FLASK_ENV=development
 flask init-db
 flask run
 
+$ python3 -m pip install --upgrade --force-reinstall -r requirements.txt
 $ deactivate
 
 	<<---| Git Bash Flask Venv |--->>
-
 python -m venv venv
-source venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-python -m pip install --upgrade --force-reinstall -r requirements.txt
-python -m pip freeze > requirements.txt
+./venv/Scripts/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+pip install --upgrade -r requirements.txt
+pip freeze > requirements.txt
 export FLASK_APP=<?????>
 export FLASK_ENV=development
 flask init-db
 flask mock-db
 flask run
 
+$ python -m pip install --upgrade --force-reinstall -r requirements.txt
 $ deactivate
 
 	#######
 	# Pip #
 	#######
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+pip --version
 
-$ pip --version
-
-	##########################
-	# Install/Update/Upgrade #
-	##########################
-		<<---| Mac |--->>
-##### Pip install packages #####
+	#######################
+	# Install Pip package #
+	#######################
+	<<---| Mac |--->>
 $ pip3 install <?????>
-		
-##### Upgrade a Pip package #####
+
+	<<---| Git Bash |--->>
+$ pip install <?????>
+
+	#######################
+	# Upgrade Pip package #
+	#######################
+	<<---| Mac |--->>
 $ pip3 install <?????> --upgrade
 
-##### Upgrade requirements.txt packages #####
+	<<---| Git Bash |--->>
+$ python -m pip install <?????> --upgrade
+
+	#####################################
+	# Upgrade requirements.txt packages #
+	#####################################
+	<<---| Mac |--->>
 $ pip3 install -r requirements.txt --upgrade
+
+	<<---| Git Bash |--->>
+$ pip install -r requirements.txt --upgrade
 
 ##### Upgrade Pip #####
 $ pip3 install -U pip
-$ python3 -m pip install -U pip
-
-##### Copy pip list to clipboard #####
-$ pip3 list | pbcopy
-
-##### Paste pip list outdated to clipboard #####
-$ pip3 list --outdated | pbcopy
-
-##### Paste pip list outdated to file #####
-$ pbpaste > pip-outdated.txt
-
-##### Show pip package #####
-$ pip3 show <?????> <?????>
-
-##### Update/Upgrade all Pip in Venv #####
-$ pip freeze --local | grep -v ‘^\-e’ | cut -d = -f 1 | xargs -n1 pip install -U
-
-##### Update/Upgrade all global pip packages #####
-$ pip3 list -o | grep -v -i warning | cut -f1 -d’ ' | tr ” ” “\n” | awk ‘{if(NR>=3)print}’ | cut -d’ ' -f1 | xargs -n1 pip3 install -U
 
 	<<---| Git Bash |--->>
-##### Pip install packages #####
-$ python -m pip install <?????>
-		
-##### Upgrade a Pip package #####
-$ python -m pip install <?????> --upgrade
+$ pip install -U pip
 
-##### Upgrade requirements.txt packages #####
-$ python -m pip install -r requirements.txt --upgrade
+	##############################
+	# Copy pip list to clipboard #
+	##############################
+	<<---| Mac |--->>
+$ pip3 list | pbcopy
 
-##### Upgrade Pip #####
-$ python -m pip install -U pip
-$ python -m pip install -U pip
-
-##### Copy pip list to clipboard #####
-$ python -m pip list | clip
+	<<---| Git Bash |--->>
+$ pip list | clip
 
 ##### Paste pip list outdated to clipboard #####
-$ python -m pip list --outdated | clip
+	<<---| Mac |--->>
+$ pip3 list --outdated | pbcopy
+
+	<<---| Git Bash |--->>
+$ pip list --outdated | clip
 
 ##### Paste pip list outdated to file #####
+	<<---| Mac |--->>
+$ pbpaste > pip-outdated.txt
+
+	<<---| Git Bash |--->>
 $ clip > pip-outdated.txt
 
 ##### Show pip package #####
-$ python -m pip show <?????> <?????>
-
-##### Update/Upgrade all Pip in Venv #####
-$ python -m pip freeze --local | grep -v ‘^\-e’ | cut -d = -f 1 | xargs -n1 pip install -U
-
-##### Update/Upgrade all global pip packages #####
-$ python -m pip list -o | grep -v -i warning | cut -f1 -d’ ' | tr ” ” “\n” | awk ‘{if(NR>=3)print}’ | cut -d’ ' -f1 | xargs -n1 pip3 install -U
-
-	########################
-	# Pip requirements.txt #
-	########################
 	<<---| Mac |--->>
-##### Install pip packages in requirements.txt #####
-$ pip3 install -r requirements.txt
-
-#####  Add pip packages to requirements.txt #####
-$ pip3 freeze > requirements.txt
-
-##### View requirements.txt contents #####
-$ cat requirements.txt
-
-##### Copy requirements.txt contents to clipboard #####
-$ pbcopy < requirements.txt
-
-##### Uninstall system Python pip packages #####
-$ pip3 uninstall -r requirements.txt
-
-	# Or to remove all at once #
-
- pip3 uninstall -r requirements.txt -y
+$ pip3 show <?????> <?????>
 
 	<<---| Git Bash |--->>
-##### Install pip packages in requirements.txt #####
-$ python -m pip install -r requirements.txt
+$ pip show <?????> <?????>
 
-#####  Add pip packages to requirements.txt #####
-$ python -m pip freeze > requirements.txt
+	##################################
+	# Update/Upgrade all Pip in Venv #
+	##################################
+	<<---| Mac |--->>
+$ pip3 freeze --local | grep -v ‘^\-e’ | cut -d = -f 1 | xargs -n1 pip install -U
 
-##### View requirements.txt contents #####
+	<<---| Git Bash |--->>
+$ pip freeze --local | grep -v ‘^\-e’ | cut -d = -f 1 | xargs -n1 pip install -U
+
+	##########################################
+	# Update/Upgrade all global pip packages #
+	##########################################
+	<<---| Mac |--->>
+$ pip3 list -o | grep -v -i warning | cut -f1 -d’ ' | tr ” ” “\n” | awk ‘{if(NR>=3)print}’ | cut -d’ ' -f1 | xargs -n1 pip3 install -U
+
+	<<---| Git Bash |--->>
+$ pip list -o | grep -v -i warning | cut -f1 -d’ ' | tr ” ” “\n” | awk ‘{if(NR>=3)print}’ | cut -d’ ' -f1 | xargs -n1 pip3 install -U
+
+	############################################
+	# Install pip packages in requirements.txt #
+	############################################
+	<<---| Mac |--->>
+$ pip3 install -r requirements.txt
+
+	<<---| Git Bash |--->>
+$ pip install -r requirements.txt
+
+	########################################
+	# Add pip packages to requirements.txt #
+	########################################
+	<<---| Mac |--->>
+$ pip3 freeze > requirements.txt
+
+	<<---| Git Bash |--->>
+$ pip freeze > requirements.txt
+
+	##################################
+	# View requirements.txt contents #
+	##################################
 $ cat requirements.txt
 
-##### Copy requirements.txt contents to clipboard #####
+	###############################################
+	# Copy requirements.txt contents to clipboard #
+	###############################################
+	<<---| Mac |--->>
+$ pbcopy < requirements.txt
+
+	<<---| Git Bash |--->>
 $ clip < requirements.txt
 
-##### Uninstall system Python pip packages #####
-$ python -m pip uninstall -r requirements.txt
+	########################################
+	# Uninstall system Python pip packages #
+	########################################
+	<<---| Mac |--->>
+$ pip3 uninstall -r requirements.txt
 
-	# Or to remove all at once #
-$ python -m pip uninstall -r requirements.txt -y
+	<<---| Git Bash |--->>
+$ pip uninstall -r requirements.txt
+
+	## Or to remove all at once ##
+
+	<<---| Mac |--->>
+$ pip3 uninstall -r requirements.txt -y
+
+	<<---| Git Bash |--->>
+$ pip uninstall -r requirements.txt -y
 
 	##############
 	# youtube-dl #
 	##############
 youtube-dl -cit --extract-audio --audio-format mp3 'bestaudio[ext=mp3]/best[ext=mp3]/best' '<video url>'
 
-youtube-dl -f mp4'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' '<video url>'
+youtube-dl -f mp4'bestvideo[ext=mp4]+bestaudio[ext=mp4]/best[ext=mp4]/best' '<video url>'
 
 youtube-dl --playlist-items 2,3,7,10 '<playlist_url>'
 
-youtube-dl --playlist-start 10 '<playlist_url>'
+youtube-dl --playlist-start 1 '<playlist_url>'
 
 youtube-dl --playlist-start 2 --playlist-end 5 '<playlist_url>'
 
@@ -198,3 +221,29 @@ youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'  '<vide
 youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -o "%(title)s-%(id)s.%(ext)s"  '<video_url>'
 
 youtube-dl -o '%(title)s.%(ext)s'  '<video_url>'
+
+	##########
+	# Pygame #
+	##########
+python -m pip install --upgrade -r requirements.txt
+python -m pip install https://github.com/pygame/pygame/archive/master.zip
+python -m pip install https://github.com/pygame/pygame/archive/1.9.4.zip
+python -m pip install git+https://github.com/pygame/pygame.git
+python -m pygame.tests
+python -m pip install setuptools requests -U
+python -m buildconfig -sdl2 --download
+python -m pip install .
+python -m pygame.examples.aliens
+python -m pip install --upgrade --force-reinstall -r requirements.txt
+python -m pip freeze > requirements.txt
+
+	#################
+	# Shebang Lines #
+	#################
+#! /usr/bin/env python
+
+#! /usr/bin/python
+
+#! /usr/local/bin/python
+
+#! python
